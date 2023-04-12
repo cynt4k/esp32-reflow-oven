@@ -1,0 +1,28 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"name": "doc",
+			"path": "doc",
+		},
+		{
+			"name": "code",
+			"path": "code"
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"*.erd": "vuerd",
+			"string": "cpp",
+			"*.tcc": "cpp",
+			"unordered_map": "cpp",
+			"fstream": "cpp",
+			"istream": "cpp",
+			"numeric": "cpp",
+			"ostream": "cpp",
+			"sstream": "cpp"
+		}
+	}
+}

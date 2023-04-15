@@ -34,6 +34,7 @@ NexText t_status_message(0, 10, "g1");
 NexWaveform w_status(0, 11, "s0");
 NexTimer tm_status_update_graph(0, 12, "tm0");
 NexNumber n_status_temperature(0, 13, "n0");
+NexNumber n_status_calc_temperature(0, 15, "n1");
 NexVariable v_status_reflow_running(0, 14, "reflowRunning");
 
 // Parameter Page
@@ -114,6 +115,9 @@ NexTouch *nex_listen_list[] = {
   &b_advanced_D_term,
   &b_advanced_I_term,
   &b_advanced_P_term,
+  &b_advanced_cooldown_temp,
+  &b_advanced_temp_limit_min,
+  &b_advanced_temp_limit_max,
   // Profile
   &b_profile_1,
   &b_profile_2,
@@ -151,6 +155,7 @@ uint8_t numpad_pos = -1;
 
 // Temperature control values
 uint32_t last_temp = 0;
+uint32_t last_calc_temp = 0;
 
 bool trigger_start = false;
 
@@ -282,26 +287,43 @@ void bNumpadCallback(void *ptr) {
     t_numpad_input.setText(numpad_value_char);
 }
 
+void format_value(float_t value, char val_buff[10]) {
+    float_t decimal_places = value - static_cast<int16_t>(value);
+    #ifdef DEBUG
+    Serial.print("Decimal value after comma: ");
+    Serial.println(decimal_places);
+    #endif
+    if (decimal_places <= 0) {
+        sprintf(val_buff, "%.0f", value);
+    } else if (value < 0.1) {
+        sprintf(val_buff, "%.3f", value);
+    } else if (value < 1) {
+        sprintf(val_buff, "%.2f", value);
+    } else {
+        sprintf(val_buff, "%.1f", value);
+    }
+}
+
 void set_values_advanced_page() {
     delay(100);
     char val_buff[10];
     // P-Term
-    sprintf(val_buff, "%.1f", current_profile->vals[PARAMETER_ADVANCED_P_TERM]);
+    format_value(current_profile->vals[PARAMETER_ADVANCED_P_TERM], val_buff);
     t_advanced_P_term.setText(val_buff);
     // I-Term
-    sprintf(val_buff, "%.1f", current_profile->vals[PARAMETER_ADVANCED_I_TERM]);
+    format_value(current_profile->vals[PARAMETER_ADVANCED_I_TERM], val_buff);
     t_advanced_I_term.setText(val_buff);
     // D-Term
-    sprintf(val_buff, "%.1f", current_profile->vals[PARAMETER_ADVANCED_D_TERM]);
+    format_value(current_profile->vals[PARAMETER_ADVANCED_D_TERM], val_buff);
     t_advanced_D_term.setText(val_buff);
     // Cooldown Temp
-    sprintf(val_buff, "%.1f", current_profile->vals[PARAMETER_ADVANCED_COOLDOWN_TEMP]);
+    format_value(current_profile->vals[PARAMETER_ADVANCED_COOLDOWN_TEMP], val_buff);
     t_advanced_cooldown_temp.setText(val_buff);
     // Temp limit min
-    sprintf(val_buff, "%.1f", current_profile->vals[PARAMETER_ADVANCED_LIMIT_TEMP_MIN]);
+    format_value(current_profile->vals[PARAMETER_ADVANCED_LIMIT_TEMP_MIN], val_buff);
     t_advanced_temp_limit_min.setText(val_buff);
     // Temp limit max
-    sprintf(val_buff, "%.1f", current_profile->vals[PARAMETER_ADVANCED_LIMIT_TEMP_MAX]);
+    format_value(current_profile->vals[PARAMETER_ADVANCED_LIMIT_TEMP_MAX], val_buff);
     t_advanced_temp_limit_max.setText(val_buff);
 }
 
@@ -443,7 +465,10 @@ void bPageSwitchCallback(void *ptr) {
         current_page = previous_page;
         current_parameter = PARAMETER_NONE;
         clear_numpad();
-        set_values_parameter_page();
+        switch (current_page) {
+            case PAGE_ADVANCED: set_values_advanced_page(); break;
+            case PAGE_PARAMETER: set_values_parameter_page(); break;
+        }
     }
     if (btn->compare(&b_advanced_back)) {
         current_page = PAGE_PARAMETER;
@@ -488,6 +513,15 @@ void bParameterChangeCallback(void *ptr) {
     }
     if (btn->compare(&b_advanced_P_term)) {
         current_parameter = PARAMETER_ADVANCED_P_TERM;
+    }
+    if (btn->compare(&b_advanced_cooldown_temp)) {
+        current_parameter = PARAMETER_ADVANCED_COOLDOWN_TEMP;
+    }
+    if (btn->compare(&b_advanced_temp_limit_min)) {
+        current_parameter = PARAMETER_ADVANCED_LIMIT_TEMP_MIN;
+    }
+    if (btn->compare(&b_advanced_temp_limit_max)) {
+        current_parameter = PARAMETER_ADVANCED_LIMIT_TEMP_MAX;
     }
 }
 
@@ -561,10 +595,6 @@ void Display::setup_display() {
     update_status_message(true);
 }
 
-Display::Display(MAX6675 * thermocouple) {
-    this->thermocouple = thermocouple;
-}
-
 void Display::display_loop() {
     switch (current_page) {
         case PAGE_STATUS:
@@ -591,6 +621,16 @@ void Display::set_temperature(float_t temperature) {
         n_status_temperature.setValue(temperature);
     }
     last_temp = temperature;
+}
+
+void Display::set_calc_temperature(float_t temperature) {
+    if (last_calc_temp == temperature) {
+        return;
+    }
+    if (current_page == PAGE_STATUS) {
+        n_status_calc_temperature.setValue(temperature);
+    }
+    last_calc_temp = temperature;
 }
 
 float_t Display::get_numpad_value() {

@@ -9,7 +9,7 @@
 #include <PID_v1.h>
 
 MAX6675 thermocouple(MAX_CLK, MAX_CS, MAX_DO);
-Display display(&thermocouple);
+Display display;
 
 double setpoint, input, output;
 double kp, ki, kd;
@@ -19,6 +19,7 @@ unsigned long next_read_temp;
 unsigned long next_heatup_interval;
 unsigned long timer_soak;
 unsigned long timer_reflow;
+unsigned long buzzer_period;
 reflow_status_t reflow_status;
 
 PID pid(&input, &output, &setpoint, kp, ki, kd, DIRECT);
@@ -32,6 +33,7 @@ void setup() {
   }
 
   pinMode(SSR_PIN, OUTPUT);
+  pinMode(BUZZER_PIN, OUTPUT);
 
   delay(100);
   display.setup_display();
@@ -87,6 +89,11 @@ void loop() {
     Serial.println(input);
     #endif
     display.set_temperature(input);
+    if (reflow_status == REFLOW_STATUS_ON) {
+      display.set_calc_temperature(setpoint);
+    } else {
+      display.set_calc_temperature(input);
+    }
   }
 
   switch(current_status) {
@@ -102,6 +109,11 @@ void loop() {
         setpoint = input + current_profile->vals[PARAMETER_HEATUP1];
         pid.SetOutputLimits(0, window_size);
         pid.SetSampleTime(PID_SAMPLE_TIME);
+        pid.SetTunings(
+          current_profile->vals[PARAMETER_ADVANCED_P_TERM],
+          current_profile->vals[PARAMETER_ADVANCED_I_TERM],
+          current_profile->vals[PARAMETER_ADVANCED_D_TERM]
+        );
         pid.SetMode(AUTOMATIC);
         current_status = STATUS_HEATUP1;
         next_heatup_interval += HEATUP_CHECK_INTERVAL;
@@ -142,9 +154,14 @@ void loop() {
       if (millis() > timer_reflow) {
         setpoint = current_profile->vals[PARAMETER_ADVANCED_COOLDOWN_TEMP];
         current_status = STATUS_COOLDOWN;
+        buzzer_period = millis() + BUZZER_ON_PERIOD;
+        digitalWrite(BUZZER_PIN, HIGH);
       }
       break;
     case STATUS_COOLDOWN:
+      if (millis() > buzzer_period) {
+        digitalWrite(BUZZER_PIN, LOW);
+      }
       if (input < current_profile->vals[PARAMETER_ADVANCED_COOLDOWN_TEMP]) {
         reflow_status = REFLOW_STATUS_OFF;
         current_status = STATUS_FINISHED;
@@ -153,6 +170,7 @@ void loop() {
     case STATUS_ABORTED:
       reflow_status = REFLOW_STATUS_OFF;
     case STATUS_TOO_HOT:
+      trigger_start = false;
       if (input < current_profile->vals[PARAMETER_ADVANCED_LIMIT_TEMP_MIN]) {
         current_status = STATUS_READY;
       }

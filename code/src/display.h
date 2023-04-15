@@ -39,13 +39,14 @@ extern bool trigger_start;
 
 class Display {
 public:
-    Display(MAX6675 * thermocouple);
+    // Display(MAX6675 * thermocouple);
     void setup_display();
     void display_loop();
     float_t get_numpad_value();
     void set_temperature(float_t temperature);
+    void set_calc_temperature(float_t temperature);
 private:
-    MAX6675 * thermocouple;
+    // MAX6675 * thermocouple;
     unsigned long last_update_status_parameter = millis();
 };
 #endif

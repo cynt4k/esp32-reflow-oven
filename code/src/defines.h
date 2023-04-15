@@ -16,9 +16,11 @@
 #define TXD2            17
 #define RXD2            16
 #define SSR_PIN         26
+#define BUZZER_PIN      21
 
-#define SENSOR_SAMPLING_TIME 1000
+#define SENSOR_SAMPLING_TIME 1500
 #define HEATUP_CHECK_INTERVAL 1000
+#define BUZZER_ON_PERIOD 2000
 
 enum Parameter {
     PARAMETER_NONE = -1,

@@ -48,6 +48,7 @@ void setup() {
   pid.SetTunings(kp, ki, kd);
 
   input = 18; // DEFAULT Temperature
+  setpoint = input;
 
   Serial.println("setup completed");
 }
@@ -124,6 +125,9 @@ void loop() {
       if (millis() >= next_heatup_interval) {
         next_heatup_interval += HEATUP_CHECK_INTERVAL;
         setpoint += current_profile->vals[PARAMETER_HEATUP1];
+        if (setpoint >= current_profile->vals[PARAMETER_SOAK_TEMP]) {
+          setpoint = current_profile->vals[PARAMETER_SOAK_TEMP];
+        }
       }
       if (input >= current_profile->vals[PARAMETER_SOAK_TEMP]) {
         timer_soak = millis() + current_profile->vals[PARAMETER_SOAK_TIME] * 1000; // Soak time in seconds
@@ -143,6 +147,9 @@ void loop() {
       if (millis() >= next_heatup_interval) {
         next_heatup_interval += HEATUP_CHECK_INTERVAL;
         setpoint += current_profile->vals[PARAMETER_HEATUP2];
+        if (setpoint >= current_profile->vals[PARAMETER_REFLOW_TEMP]) {
+          setpoint = current_profile->vals[PARAMETER_REFLOW_TEMP];
+        }
       }
       if (input >= current_profile->vals[PARAMETER_REFLOW_TEMP]) {
         timer_reflow = millis() + current_profile->vals[PARAMETER_REFLOW_TIME] * 1000; // Reflow time in seconds

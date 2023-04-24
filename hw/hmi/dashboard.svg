@@ -28,15 +28,15 @@
      inkscape:document-units="mm"
      showgrid="true"
      showborder="false"
-     inkscape:zoom="0.64693624"
-     inkscape:cx="139.11726"
-     inkscape:cy="568.83504"
+     inkscape:zoom="2.587745"
+     inkscape:cx="181.81854"
+     inkscape:cy="211.76739"
      inkscape:window-width="2528"
      inkscape:window-height="1358"
      inkscape:window-x="16"
      inkscape:window-y="786"
      inkscape:window-maximized="1"
-     inkscape:current-layer="layer3"><inkscape:grid
+     inkscape:current-layer="layer1"><inkscape:grid
        type="xygrid"
        id="grid1868"
        snapvisiblegridlinesonly="true"
@@ -473,7 +473,7 @@
        y="75.008316"
        id="text2668"><tspan
          id="tspan2666"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.35px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';text-align:center;text-anchor:middle;stroke-width:0.264583"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.35px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans Bold';text-align:center;text-anchor:middle;stroke-width:0.264583"
          x="21.037855"
          y="75.008316"
          sodipodi:role="line">HEAT UP</tspan></text><rect
@@ -498,7 +498,7 @@
        y="66.012489"
        id="text2668-7"><tspan
          id="tspan2666-8"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.35px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';text-align:center;text-anchor:middle;stroke-width:0.264583"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.35px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans Bold';text-align:center;text-anchor:middle;stroke-width:0.264583"
          x="21.037855"
          y="66.012489"
          sodipodi:role="line">PROFIL</tspan></text><rect
@@ -564,7 +564,7 @@
        y="93.057365"
        id="text2668-5"><tspan
          id="tspan2666-9"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.35px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';text-align:center;text-anchor:middle;stroke-width:0.264583"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.35px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans Bold';text-align:center;text-anchor:middle;stroke-width:0.264583"
          x="21.19524"
          y="93.057365"
          sodipodi:role="line">HEAT UP</tspan></text><text
@@ -574,7 +574,7 @@
        y="84.194878"
        id="text2668-0"><tspan
          id="tspan2666-2"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.35px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';text-align:center;text-anchor:middle;stroke-width:0.264583"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.35px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans Bold';text-align:center;text-anchor:middle;stroke-width:0.264583"
          x="21.166668"
          y="84.194878"
          sodipodi:role="line">SOAK</tspan></text><text
@@ -584,7 +584,7 @@
        y="102.1294"
        id="text2668-0-2"><tspan
          id="tspan2666-2-2"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.35px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';text-align:center;text-anchor:middle;stroke-width:0.264583"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.35px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans Bold';text-align:center;text-anchor:middle;stroke-width:0.264583"
          x="20.911604"
          y="102.1294"
          sodipodi:role="line">REFLOW</tspan></text><text
@@ -594,7 +594,7 @@
        y="111.125"
        id="text2668-0-2-6"><tspan
          id="tspan2666-2-2-8"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.35px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';text-align:center;text-anchor:middle;stroke-width:0.264583"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.35px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans Bold';text-align:center;text-anchor:middle;stroke-width:0.264583"
          x="21.166666"
          y="111.125"
          sodipodi:role="line">STATUS</tspan></text><text

@@ -55,20 +55,27 @@ NexText t_parameter_reflow_time(3, 13, "t4");
 NexText t_parameter_reflow_temp(3, 14, "t5");
 
 // Advanced Page
-NexButton b_advanced_P_term(2, 1, "b0");
-NexButton b_advanced_I_term(2, 2, "b1");
-NexButton b_advanced_D_term(2, 3, "b2");
-NexButton b_advanced_cooldown_temp(2, 8, "b4");
-NexButton b_advanced_temp_limit_min(2, 9, "b5");
-NexButton b_advanced_temp_limit_max(2, 10, "b6");
+NexButton b_advanced_heatup_term(2, 1, "b0");
+NexButton b_advanced_soak_term(2, 2, "b1");
+NexButton b_advanced_reflow_term(2, 3, "b2");
+NexButton b_advanced_cooldown_temp(2, 5, "b4");
+NexButton b_advanced_temp_limit_min(2, 6, "b5");
+NexButton b_advanced_temp_limit_max(2, 7, "b6");
 NexButton b_advanced_back(2, 4, "b3");
 
-NexText t_advanced_P_term(2, 1, "t0");
-NexText t_advanced_I_term(2, 2, "t1");
-NexText t_advanced_D_term(2, 3, "t2");
-NexText t_advanced_cooldown_temp(2, 11, "t3");
-NexText t_advanced_temp_limit_min(2, 12, "t4");
-NexText t_advanced_temp_limit_max(2, 13, "t5");
+NexText t_advanced_cooldown_temp(2, 8, "t3");
+NexText t_advanced_temp_limit_min(2, 9, "t4");
+NexText t_advanced_temp_limit_max(2, 10, "t5");
+
+// PID Controller Page
+NexButton b_controller_p_term(5, 1, "b0");
+NexButton b_controller_i_term(5, 2, "b1");
+NexButton b_controller_d_term(5, 3, "b2");
+NexButton b_controller_back(5, 4, "b3");
+
+NexText t_controller_P_term(5, 5, "t0");
+NexText t_controller_I_term(5, 6, "t1");
+NexText t_controller_D_term(5, 7, "t2");
 
 // Profile Page
 NexButton b_profile_1(4, 1, "b0");
@@ -112,12 +119,17 @@ NexTouch *nex_listen_list[] = {
   &b_parameter_soak_time,
   // Advanced
   &b_advanced_back,
-  &b_advanced_D_term,
-  &b_advanced_I_term,
-  &b_advanced_P_term,
+  &b_advanced_heatup_term,
+  &b_advanced_soak_term,
+  &b_advanced_reflow_term,
   &b_advanced_cooldown_temp,
   &b_advanced_temp_limit_min,
   &b_advanced_temp_limit_max,
+  // Controller
+  &b_controller_back,
+  &b_controller_d_term,
+  &b_controller_i_term,
+  &b_controller_p_term,
   // Profile
   &b_profile_1,
   &b_profile_2,
@@ -304,18 +316,39 @@ void format_value(float_t value, char val_buff[10]) {
     }
 }
 
+void set_values_controller_page() {
+    delay(100);
+    char val_d_term[10], val_i_term[10], val_p_term[10];
+    
+    switch(current_page) {
+        case PAGE_CONTROLLER_HEATUP:
+            format_value(current_profile->vals[PARAMETER_HEATUP_D_TERM], val_d_term);
+            format_value(current_profile->vals[PARAMETER_HEATUP_I_TERM], val_i_term);
+            format_value(current_profile->vals[PARAMETER_HEATUP_P_TERM], val_p_term);
+            break;
+        case PAGE_CONTROLLER_SOAK:
+            format_value(current_profile->vals[PARAMETER_SOAK_D_TERM], val_d_term);
+            format_value(current_profile->vals[PARAMETER_SOAK_I_TERM], val_i_term);
+            format_value(current_profile->vals[PARAMETER_SOAK_P_TERM], val_p_term);
+            break;
+        case PAGE_CONTROLLER_REFLOW:
+            format_value(current_profile->vals[PARAMETER_REFLOW_D_TERM], val_d_term);
+            format_value(current_profile->vals[PARAMETER_REFLOW_I_TERM], val_i_term);
+            format_value(current_profile->vals[PARAMETER_REFLOW_P_TERM], val_p_term);
+            break;
+        default:
+            sprintf(val_d_term, "Unknown");
+            sprintf(val_i_term, "Unknown");
+            sprintf(val_p_term, "Unknown");
+    }
+    t_controller_D_term.setText(val_d_term);
+    t_controller_I_term.setText(val_i_term);
+    t_controller_P_term.setText(val_p_term);
+}
+
 void set_values_advanced_page() {
     delay(100);
     char val_buff[10];
-    // P-Term
-    format_value(current_profile->vals[PARAMETER_ADVANCED_P_TERM], val_buff);
-    t_advanced_P_term.setText(val_buff);
-    // I-Term
-    format_value(current_profile->vals[PARAMETER_ADVANCED_I_TERM], val_buff);
-    t_advanced_I_term.setText(val_buff);
-    // D-Term
-    format_value(current_profile->vals[PARAMETER_ADVANCED_D_TERM], val_buff);
-    t_advanced_D_term.setText(val_buff);
     // Cooldown Temp
     format_value(current_profile->vals[PARAMETER_ADVANCED_COOLDOWN_TEMP], val_buff);
     t_advanced_cooldown_temp.setText(val_buff);
@@ -461,6 +494,18 @@ void bPageSwitchCallback(void *ptr) {
         current_page = PAGE_ADVANCED;
         set_values_advanced_page();
     }
+    if (btn->compare(&b_advanced_heatup_term)) {
+        current_page = PAGE_CONTROLLER_HEATUP;
+        set_values_controller_page();
+    }
+    if (btn->compare(&b_advanced_soak_term)) {
+        current_page = PAGE_CONTROLLER_SOAK;
+        set_values_controller_page();
+    }
+    if (btn->compare(&b_advanced_reflow_term)) {
+        current_page = PAGE_CONTROLLER_REFLOW;
+        set_values_controller_page();
+    }
     if (btn->compare(&b_numpad_back)) {
         current_page = previous_page;
         current_parameter = PARAMETER_NONE;
@@ -468,11 +513,20 @@ void bPageSwitchCallback(void *ptr) {
         switch (current_page) {
             case PAGE_ADVANCED: set_values_advanced_page(); break;
             case PAGE_PARAMETER: set_values_parameter_page(); break;
+            case PAGE_CONTROLLER_HEATUP:
+            case PAGE_CONTROLLER_REFLOW:
+            case PAGE_CONTROLLER_SOAK:
+                set_values_controller_page();
+                break;
         }
     }
     if (btn->compare(&b_advanced_back)) {
         current_page = PAGE_PARAMETER;
         set_values_parameter_page();
+    }
+    if (btn->compare(&b_controller_back)) {
+        current_page = PAGE_ADVANCED;
+        set_values_advanced_page();
     }
     if (btn->compare(&b_parameter_back) || btn->compare(&b_profile_back)) {
         current_page = PAGE_STATUS;
@@ -481,6 +535,42 @@ void bPageSwitchCallback(void *ptr) {
         update_status_message(true);
     }
     previous_page = currentPageTmp;
+}
+
+Parameter current_parameter_controller(NexButton *btn) {
+    switch(previous_page) {
+        case PAGE_CONTROLLER_HEATUP:
+            if (btn->compare(&b_controller_d_term)) {
+                return PARAMETER_HEATUP_D_TERM;
+            }
+            if (btn->compare(&b_controller_i_term)) {
+                return PARAMETER_HEATUP_I_TERM;
+            }
+            if (btn->compare(&b_controller_p_term)) {
+                return PARAMETER_HEATUP_P_TERM;
+            }
+        case PAGE_CONTROLLER_SOAK:
+            if (btn->compare(&b_controller_d_term)) {
+                return PARAMETER_SOAK_D_TERM;
+            }
+            if (btn->compare(&b_controller_i_term)) {
+                return PARAMETER_SOAK_I_TERM;
+            }
+            if (btn->compare(&b_controller_p_term)) {
+                return PARAMETER_SOAK_P_TERM;
+            }
+        case PAGE_CONTROLLER_REFLOW:
+            if (btn->compare(&b_controller_d_term)) {
+                return PARAMETER_REFLOW_D_TERM;
+            }
+            if (btn->compare(&b_controller_i_term)) {
+                return PARAMETER_REFLOW_I_TERM;
+            }
+            if (btn->compare(&b_controller_p_term)) {
+                return PARAMETER_REFLOW_P_TERM;
+            }
+    }
+    return PARAMETER_NONE;
 }
 
 void bParameterChangeCallback(void *ptr) {
@@ -505,14 +595,11 @@ void bParameterChangeCallback(void *ptr) {
     if (btn->compare(&b_parameter_soak_time)) {
         current_parameter = PARAMETER_SOAK_TIME;
     }
-    if (btn->compare(&b_advanced_D_term)) {
-        current_parameter = PARAMETER_ADVANCED_D_TERM;
-    }
-    if (btn->compare(&b_advanced_I_term)) {
-        current_parameter = PARAMETER_ADVANCED_I_TERM;
-    }
-    if (btn->compare(&b_advanced_P_term)) {
-        current_parameter = PARAMETER_ADVANCED_P_TERM;
+    if (btn->compare(&b_controller_d_term) ||
+        btn->compare(&b_controller_i_term) ||
+        btn->compare(&b_controller_p_term))
+    {
+        current_parameter = current_parameter_controller(btn);
     }
     if (btn->compare(&b_advanced_cooldown_temp)) {
         current_parameter = PARAMETER_ADVANCED_COOLDOWN_TEMP;
@@ -547,6 +634,10 @@ void Display::setup_display() {
     b_profile_switch.attachPop(bPageSwitchCallback, &b_profile_switch);
     b_advanced_back.attachPop(bPageSwitchCallback, &b_advanced_back);
     b_parameter_advanced.attachPop(bPageSwitchCallback, &b_parameter_advanced);
+    b_advanced_heatup_term.attachPop(bPageSwitchCallback, &b_advanced_heatup_term);
+    b_advanced_soak_term.attachPop(bPageSwitchCallback, &b_advanced_soak_term);
+    b_advanced_reflow_term.attachPop(bPageSwitchCallback, &b_advanced_reflow_term);
+    b_controller_back.attachPop(bPageSwitchCallback, &b_controller_back);
     b_numpad_back.attachPop(bPageSwitchCallback, &b_numpad_back);
     b_parameter_back.attachPop(bPageSwitchCallback, &b_parameter_back);
     b_profile_back.attachPop(bPageSwitchCallback, &b_profile_back);
@@ -566,12 +657,14 @@ void Display::setup_display() {
     b_parameter_soak_time.attachPop(bParameterChangeCallback, &b_parameter_soak_time);
 
     // Callback Advanced Parameter Change
-    b_advanced_D_term.attachPop(bParameterChangeCallback, &b_advanced_D_term);
-    b_advanced_I_term.attachPop(bParameterChangeCallback, &b_advanced_I_term);
-    b_advanced_P_term.attachPop(bParameterChangeCallback, &b_advanced_P_term);
     b_advanced_cooldown_temp.attachPop(bParameterChangeCallback, &b_advanced_cooldown_temp);
     b_advanced_temp_limit_min.attachPop(bParameterChangeCallback, &b_advanced_temp_limit_min);
     b_advanced_temp_limit_max.attachPop(bParameterChangeCallback, &b_advanced_temp_limit_max);
+
+    // Callback Controller Parameter Change
+    b_controller_d_term.attachPop(bParameterChangeCallback, &b_controller_d_term);
+    b_controller_i_term.attachPop(bParameterChangeCallback, &b_controller_i_term);
+    b_controller_p_term.attachPop(bParameterChangeCallback, &b_controller_p_term);
 
     //Callback Numpad Handling
     b_numpad_0.attachPop(bNumpadCallback, &b_numpad_0);

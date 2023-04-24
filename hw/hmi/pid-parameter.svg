@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="320"
+   height="480"
+   viewBox="0 0 84.666657 126.99999"
+   version="1.1"
+   id="svg5"
+   xml:space="preserve"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   sodipodi:docname="pid-parameter.svg"
+   inkscape:export-filename="../../../../../../../tmp/hmi/pid-parameter.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"><sodipodi:namedview
+     id="namedview7"
+     pagecolor="#b9b9b9"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="true"
+     showborder="false"
+     inkscape:zoom="1.829812"
+     inkscape:cx="-18.581144"
+     inkscape:cy="185.81144"
+     inkscape:window-width="2528"
+     inkscape:window-height="1358"
+     inkscape:window-x="16"
+     inkscape:window-y="786"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer4"
+     showguides="false"><inkscape:grid
+       type="xygrid"
+       id="grid1868"
+       snapvisiblegridlinesonly="true"
+       spacingx="0.52916666"
+       spacingy="0.52916666" /></sodipodi:namedview><defs
+     id="defs2" /><g
+     inkscape:groupmode="layer"
+     id="layer3"
+     inkscape:label="Layer 3"
+     style="display:inline"><rect
+       style="fill:#b3b3b3;stroke:none;stroke-width:0.2;stroke-dasharray:none;stroke-opacity:1"
+       id="rect5287"
+       width="84.666664"
+       height="127"
+       x="0.11026223"
+       y="-0.074080713"
+       ry="0.77289122" /></g><g
+     inkscape:groupmode="layer"
+     id="layer4"
+     inkscape:label="Layer 1"
+     style="display:inline"><rect
+       style="display:inline;fill:#000000;fill-opacity:1;stroke:#ffffff;stroke-width:0.536;stroke-dasharray:none;stroke-opacity:1"
+       id="rect1922-0"
+       width="79.351608"
+       height="8.877636"
+       x="2.669224"
+       y="2.669224"
+       ry="0.88847452"
+       rx="0" /><text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:7.76111px;line-height:1.25;font-family:sans-serif;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="42.333332"
+       y="10.054167"
+       id="text28897"><tspan
+         sodipodi:role="line"
+         id="tspan28895"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.76111px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans Bold';text-align:center;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
+         x="42.333332"
+         y="10.054167">TEMP CONTROLLER</tspan></text><rect
+       style="display:inline;fill:#000000;fill-opacity:1;stroke:#ffffff;stroke-width:0.39488;stroke-dasharray:none;stroke-opacity:1"
+       id="rect1922"
+       width="47.664005"
+       height="8.0155144"
+       x="2.6068256"
+       y="14.248492"
+       ry="0.80219334"
+       rx="0" /><text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:6.35px;line-height:1;font-family:sans-serif;text-align:center;letter-spacing:0px;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="25.888859"
+       y="20.473169"
+       id="text2668"><tspan
+         id="tspan2666"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.35px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans Bold';text-align:center;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
+         x="25.888859"
+         y="20.473169"
+         sodipodi:role="line">PID SETTINGS</tspan></text><rect
+       style="display:inline;fill:#c8ab37;fill-opacity:1;stroke:#000000;stroke-width:0.34474;stroke-dasharray:none;stroke-opacity:1"
+       id="rect1922-8-5"
+       width="37.054127"
+       height="7.8584819"
+       x="2.6458333"
+       y="24.870832"
+       ry="0.78647745"
+       rx="0" /><text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:6.35px;line-height:1;font-family:sans-serif;text-align:center;letter-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="21.430462"
+       y="30.995756"
+       id="text2668-4-9"><tspan
+         id="tspan2666-5-6"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.35px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans Bold';text-align:center;text-anchor:middle;stroke-width:0.264583"
+         x="21.430462"
+         y="30.995756"
+         sodipodi:role="line">P-TERM</tspan></text><rect
+       style="display:inline;fill:#65a9ff;fill-opacity:1;stroke:#000000;stroke-width:0.354433;stroke-dasharray:none;stroke-opacity:1"
+       id="rect1922-8-0-2"
+       width="39.6875"
+       height="7.7554541"
+       x="42.345791"
+       y="24.973856"
+       ry="0.77616644"
+       rx="0" /><rect
+       style="display:inline;fill:#c8ab37;fill-opacity:1;stroke:#000000;stroke-width:0.34474;stroke-dasharray:none;stroke-opacity:1"
+       id="rect1922-8-5-9"
+       width="37.054127"
+       height="7.8584819"
+       x="2.6458333"
+       y="34.395832"
+       ry="0.78647745"
+       rx="0" /><text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:6.35px;line-height:1;font-family:sans-serif;text-align:center;letter-spacing:0px;text-anchor:middle;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="21.430462"
+       y="40.52076"
+       id="text2668-4-9-2"><tspan
+         id="tspan2666-5-6-0"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.35px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans Bold';text-align:center;text-anchor:middle;stroke-width:0.264583"
+         x="21.430462"
+         y="40.52076"
+         sodipodi:role="line">I-TERM</tspan></text><rect
+       style="display:inline;fill:#65a9ff;fill-opacity:1;stroke:#000000;stroke-width:0.354433;stroke-dasharray:none;stroke-opacity:1"
+       id="rect1922-8-0-2-2"
+       width="39.6875"
+       height="7.7554541"
+       x="42.345791"
+       y="34.498856"
+       ry="0.77616644"
+       rx="0" /><rect
+       style="display:inline;fill:#c8ab37;fill-opacity:1;stroke:#000000;stroke-width:0.34474;stroke-dasharray:none;stroke-opacity:1"
+       id="rect1922-8-5-59"
+       width="37.054127"
+       height="7.8584819"
+       x="2.6458333"
+       y="43.920834"
+       ry="0.78647745"
+       rx="0" /><text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:6.35px;line-height:1;font-family:sans-serif;text-align:center;letter-spacing:0px;text-anchor:middle;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="21.430462"
+       y="50.045757"
+       id="text2668-4-9-22"><tspan
+         id="tspan2666-5-6-8"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.35px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans Bold';text-align:center;text-anchor:middle;stroke-width:0.264583"
+         x="21.430462"
+         y="50.045757"
+         sodipodi:role="line">D-TERM</tspan></text><rect
+       style="display:inline;fill:#65a9ff;fill-opacity:1;stroke:#000000;stroke-width:0.354433;stroke-dasharray:none;stroke-opacity:1"
+       id="rect1922-8-0-2-9"
+       width="39.6875"
+       height="7.7554541"
+       x="42.345791"
+       y="44.023857"
+       ry="0.77616644"
+       rx="0" /></g><g
+     inkscape:groupmode="layer"
+     id="layer5"
+     inkscape:label="Layer 2"
+     style="display:inline"><rect
+       style="display:inline;fill:#000000;fill-opacity:1;stroke:#ffffff;stroke-width:0.4;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       id="rect1922-9-3-4-0"
+       width="14.816668"
+       height="10.583336"
+       x="67.20417"
+       y="113.77083"
+       ry="4.8705747e-06"
+       rx="0" /><g
+       style="fill:#ffffff;fill-opacity:1"
+       id="g36451"
+       transform="matrix(0.42639333,0,0,0.42639333,69.212529,113.04906)"><g
+         id="g36427"
+         style="fill:#ffffff;fill-opacity:1">
+	<path
+   d="m 26.105,21.891 c -0.229,0 -0.439,-0.131 -0.529,-0.346 v 0 c -0.066,-0.156 -1.716,-3.857 -7.885,-4.59 -1.285,-0.156 -2.824,-0.236 -4.693,-0.25 v 4.613 c 0,0.213 -0.115,0.406 -0.304,0.508 -0.188,0.098 -0.413,0.084 -0.588,-0.033 L 0.254,13.815 C 0.094,13.708 0,13.528 0,13.339 0,13.148 0.094,12.974 0.254,12.862 L 12.111,4.883 c 0.175,-0.121 0.398,-0.129 0.588,-0.029 0.19,0.102 0.303,0.295 0.303,0.502 v 4.293 c 2.578,0.336 13.674,2.33 13.674,11.674 0,0.271 -0.191,0.508 -0.459,0.562 -0.037,0.006 -0.076,0.006 -0.112,0.006 z"
+   id="path36395"
+   style="fill:#ffffff;fill-opacity:1" />
+	<g
+   id="g36397"
+   style="fill:#ffffff;fill-opacity:1">
+	</g>
+	<g
+   id="g36399"
+   style="fill:#ffffff;fill-opacity:1">
+	</g>
+	<g
+   id="g36401"
+   style="fill:#ffffff;fill-opacity:1">
+	</g>
+	<g
+   id="g36403"
+   style="fill:#ffffff;fill-opacity:1">
+	</g>
+	<g
+   id="g36405"
+   style="fill:#ffffff;fill-opacity:1">
+	</g>
+	<g
+   id="g36407"
+   style="fill:#ffffff;fill-opacity:1">
+	</g>
+	<g
+   id="g36409"
+   style="fill:#ffffff;fill-opacity:1">
+	</g>
+	<g
+   id="g36411"
+   style="fill:#ffffff;fill-opacity:1">
+	</g>
+	<g
+   id="g36413"
+   style="fill:#ffffff;fill-opacity:1">
+	</g>
+	<g
+   id="g36415"
+   style="fill:#ffffff;fill-opacity:1">
+	</g>
+	<g
+   id="g36417"
+   style="fill:#ffffff;fill-opacity:1">
+	</g>
+	<g
+   id="g36419"
+   style="fill:#ffffff;fill-opacity:1">
+	</g>
+	<g
+   id="g36421"
+   style="fill:#ffffff;fill-opacity:1">
+	</g>
+	<g
+   id="g36423"
+   style="fill:#ffffff;fill-opacity:1">
+	</g>
+	<g
+   id="g36425"
+   style="fill:#ffffff;fill-opacity:1">
+	</g>
+</g></g></g></svg>

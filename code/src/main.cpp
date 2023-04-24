@@ -42,9 +42,9 @@ void setup() {
   next_heatup_interval = millis();
   window_size = 2000;
 
-  kp = current_profile->vals[PARAMETER_ADVANCED_P_TERM];
-  ki = current_profile->vals[PARAMETER_ADVANCED_I_TERM];
-  kd = current_profile->vals[PARAMETER_ADVANCED_D_TERM];
+  kp = current_profile->vals[PARAMETER_HEATUP_P_TERM];
+  ki = current_profile->vals[PARAMETER_HEATUP_I_TERM];
+  kd = current_profile->vals[PARAMETER_HEATUP_D_TERM];
   pid.SetTunings(kp, ki, kd);
 
   input = 18; // DEFAULT Temperature
@@ -111,9 +111,9 @@ void loop() {
         pid.SetOutputLimits(0, window_size);
         pid.SetSampleTime(PID_SAMPLE_TIME);
         pid.SetTunings(
-          current_profile->vals[PARAMETER_ADVANCED_P_TERM],
-          current_profile->vals[PARAMETER_ADVANCED_I_TERM],
-          current_profile->vals[PARAMETER_ADVANCED_D_TERM]
+          current_profile->vals[PARAMETER_HEATUP_P_TERM],
+          current_profile->vals[PARAMETER_HEATUP_I_TERM],
+          current_profile->vals[PARAMETER_HEATUP_D_TERM]
         );
         pid.SetMode(AUTOMATIC);
         current_status = STATUS_HEATUP1;
@@ -133,6 +133,11 @@ void loop() {
         timer_soak = millis() + current_profile->vals[PARAMETER_SOAK_TIME] * 1000; // Soak time in seconds
         setpoint = current_profile->vals[PARAMETER_SOAK_TEMP];
         current_status = STATUS_SOAK;
+        pid.SetTunings(
+          current_profile->vals[PARAMETER_SOAK_P_TERM],
+          current_profile->vals[PARAMETER_SOAK_I_TERM],
+          current_profile->vals[PARAMETER_SOAK_D_TERM]
+        );
       }
       break;
     case STATUS_SOAK:
@@ -141,6 +146,11 @@ void loop() {
         setpoint = input + current_profile->vals[PARAMETER_HEATUP2];
         next_heatup_interval = millis();
         current_status = STATUS_HEATUP2;
+        pid.SetTunings(
+          current_profile->vals[PARAMETER_HEATUP_P_TERM],
+          current_profile->vals[PARAMETER_HEATUP_I_TERM],
+          current_profile->vals[PARAMETER_HEATUP_D_TERM]
+        );
       }
       break;
     case STATUS_HEATUP2:
@@ -155,6 +165,11 @@ void loop() {
         timer_reflow = millis() + current_profile->vals[PARAMETER_REFLOW_TIME] * 1000; // Reflow time in seconds
         setpoint = current_profile->vals[PARAMETER_REFLOW_TEMP];
         current_status = STATUS_REFLOW;
+        pid.SetTunings(
+          current_profile->vals[PARAMETER_REFLOW_P_TERM],
+          current_profile->vals[PARAMETER_REFLOW_I_TERM],
+          current_profile->vals[PARAMETER_REFLOW_D_TERM]
+        );
       }
       break;
     case STATUS_REFLOW:

@@ -29,14 +29,14 @@
      showgrid="true"
      showborder="false"
      inkscape:zoom="1.829812"
-     inkscape:cx="16.941631"
-     inkscape:cy="168.86981"
+     inkscape:cx="10.110328"
+     inkscape:cy="213.13665"
      inkscape:window-width="2528"
      inkscape:window-height="1358"
      inkscape:window-x="16"
      inkscape:window-y="786"
      inkscape:window-maximized="1"
-     inkscape:current-layer="layer3"
+     inkscape:current-layer="layer5"
      showguides="false"><inkscape:grid
        type="xygrid"
        id="grid1868"
@@ -90,7 +90,7 @@
        y="20.637501"
        id="text2668"><tspan
          id="tspan2666"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.35px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';text-align:center;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.35px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans Bold';text-align:center;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
          x="21.166666"
          y="20.637501"
          sodipodi:role="line">HEAT UP</tspan></text><rect
@@ -108,7 +108,7 @@
        y="29.937429"
        id="text2668-4"><tspan
          id="tspan2666-5"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.35px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';text-align:center;text-anchor:middle;stroke-width:0.264583"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.35px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans Bold';text-align:center;text-anchor:middle;stroke-width:0.264583"
          x="21.430462"
          y="29.937429"
          sodipodi:role="line">RISE TIME</tspan></text><rect
@@ -126,7 +126,7 @@
        y="30.026331"
        id="text2668-4-3"><tspan
          id="tspan2666-5-6"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.35px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';text-align:center;text-anchor:middle;stroke-width:0.264583"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.35px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans Bold';text-align:center;text-anchor:middle;stroke-width:0.264583"
          x="73.929085"
          y="30.026331"
          sodipodi:role="line">°C/s</tspan></text><rect
@@ -144,7 +144,7 @@
        y="70.379166"
        id="text2668-6"><tspan
          id="tspan2666-56"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.35px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';text-align:center;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.35px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans Bold';text-align:center;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
          x="21.166668"
          y="70.379166"
          sodipodi:role="line">HEAT UP</tspan></text><rect
@@ -162,7 +162,7 @@
        y="79.679092"
        id="text2668-4-9"><tspan
          id="tspan2666-5-4"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.35px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';text-align:center;text-anchor:middle;stroke-width:0.264583"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.35px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans Bold';text-align:center;text-anchor:middle;stroke-width:0.264583"
          x="21.430462"
          y="79.679092"
          sodipodi:role="line">RISE TIME</tspan></text><rect
@@ -180,7 +180,7 @@
        y="79.767998"
        id="text2668-4-3-12"><tspan
          id="tspan2666-5-6-9"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.35px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';text-align:center;text-anchor:middle;stroke-width:0.264583"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.35px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans Bold';text-align:center;text-anchor:middle;stroke-width:0.264583"
          x="73.929085"
          y="79.767998"
          sodipodi:role="line">°C/s</tspan></text><rect
@@ -198,7 +198,7 @@
        y="40.745831"
        id="text2668-49"><tspan
          id="tspan2666-0"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.35px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';text-align:center;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.35px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans Bold';text-align:center;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
          x="21.166666"
          y="40.745831"
          sodipodi:role="line">SOAK</tspan></text><rect
@@ -216,7 +216,7 @@
        y="50.045761"
        id="text2668-4-1"><tspan
          id="tspan2666-5-7"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.35px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';text-align:center;text-anchor:middle;stroke-width:0.264583"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.35px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans Bold';text-align:center;text-anchor:middle;stroke-width:0.264583"
          x="21.430462"
          y="50.045761"
          sodipodi:role="line">TIME</tspan></text><rect
@@ -234,7 +234,7 @@
        y="50.124783"
        id="text2668-4-3-1"><tspan
          id="tspan2666-5-6-1"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.35px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';text-align:center;text-anchor:middle;stroke-width:0.264583"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.35px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans Bold';text-align:center;text-anchor:middle;stroke-width:0.264583"
          x="77.838295"
          y="50.124783"
          sodipodi:role="line">s</tspan></text><rect
@@ -252,7 +252,7 @@
        y="59.570763"
        id="text2668-4-1-9"><tspan
          id="tspan2666-5-7-7"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.35px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';text-align:center;text-anchor:middle;stroke-width:0.264583"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.35px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans Bold';text-align:center;text-anchor:middle;stroke-width:0.264583"
          x="21.430462"
          y="59.570763"
          sodipodi:role="line">TEMP</tspan></text><rect
@@ -270,7 +270,7 @@
        y="59.738682"
        id="text2668-4-3-1-6"><tspan
          id="tspan2666-5-6-1-7"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.35px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';text-align:center;text-anchor:middle;stroke-width:0.264583"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.35px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans Bold';text-align:center;text-anchor:middle;stroke-width:0.264583"
          x="76.576767"
          y="59.738682"
          sodipodi:role="line">°C</tspan></text><rect
@@ -288,7 +288,7 @@
        y="90.487495"
        id="text2668-49-9"><tspan
          id="tspan2666-0-0"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.35px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';text-align:center;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.35px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans Bold';text-align:center;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
          x="21.166666"
          y="90.487495"
          sodipodi:role="line">REFLOW</tspan></text><rect
@@ -306,7 +306,7 @@
        y="99.787422"
        id="text2668-4-1-8"><tspan
          id="tspan2666-5-7-5"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.35px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';text-align:center;text-anchor:middle;stroke-width:0.264583"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.35px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans Bold';text-align:center;text-anchor:middle;stroke-width:0.264583"
          x="21.430462"
          y="99.787422"
          sodipodi:role="line">TIME</tspan></text><rect
@@ -324,7 +324,7 @@
        y="99.866447"
        id="text2668-4-3-1-9"><tspan
          id="tspan2666-5-6-1-6"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.35px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';text-align:center;text-anchor:middle;stroke-width:0.264583"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.35px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans Bold';text-align:center;text-anchor:middle;stroke-width:0.264583"
          x="77.838295"
          y="99.866447"
          sodipodi:role="line">s</tspan></text><rect
@@ -342,7 +342,7 @@
        y="109.31244"
        id="text2668-4-1-9-8"><tspan
          id="tspan2666-5-7-7-5"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.35px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';text-align:center;text-anchor:middle;stroke-width:0.264583"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.35px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans Bold';text-align:center;text-anchor:middle;stroke-width:0.264583"
          x="21.430462"
          y="109.31244"
          sodipodi:role="line">TEMP</tspan></text><rect
@@ -360,7 +360,7 @@
        y="109.48035"
        id="text2668-4-3-1-6-1"><tspan
          id="tspan2666-5-6-1-7-1"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.35px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';text-align:center;text-anchor:middle;stroke-width:0.264583"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.35px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans Bold';text-align:center;text-anchor:middle;stroke-width:0.264583"
          x="76.576767"
          y="109.48035"
          sodipodi:role="line">°C</tspan></text></g><g
@@ -390,7 +390,7 @@
        y="121.70833"
        id="text2668-49-9-8"><tspan
          id="tspan2666-0-0-1"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.76111px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';text-align:center;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.76111px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans Bold';text-align:center;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
          x="26.458332"
          y="121.70833"
          sodipodi:role="line">ADVANCED</tspan></text><g
